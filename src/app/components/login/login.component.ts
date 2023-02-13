@@ -4,6 +4,7 @@ import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router'
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup
+  tokenService = new JwtHelperService()
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,16 +27,24 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20)]],
-      password: [``,[
+      password: [``, [
         Validators.required,
         Validators.minLength(5),
         Validators.maxLength(20)
       ]]
     })
+    
+    if (this.tokenService.isTokenExpired(localStorage.getItem('accessToken'))) {
+      return
+    } else {
+      this.router.navigate(['/app'])
+    }
+
   }
 
   onRegisterClick() {
     this.router.navigate(['/register'])
+
   }
 
   onLoginClick() {
