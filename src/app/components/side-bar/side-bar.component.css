@@ -1,45 +1,33 @@
 .container {
-    width: 15rem;
-    height: 97vh;
-    border: solid;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    width: 15vw;
+    height: 100vh;
+    float: left;
+    /* overflow: hidden; */
     position: relative;
+    border: 5px solid;
 }
 
 .box {
-    width: 100%;
-    border-bottom: 2px solid;
-    border-top: 1px solid;
-    margin: 0;
-    padding: 0;
+    border: 3px solid;
+    width: 99%;
+    height: 9vh;
     text-align: center;
-    font-weight: bolder;
-    font-size: 40px;
-}
-
-.box:hover {
-    background-color: gray;
+    align-items: center;
+    display: flex;
 }
 
 .text {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: auto;
+    font-size: 3vw;
+    font-weight: bolder;
 }
 
 .logout {
-    bottom: 0;
-    font-size: 2rem;
-}
-
-.box:last-child {
-    text-align: bottom;
+    border-top: 5px solid;
     position: absolute;
-    border-top: 3px solid;
-    border-bottom: 0;
+    bottom: 0;
 }
 
 .statistics {
-    border-bottom: 3px solid;
+    border-bottom: 5px solid;
 }

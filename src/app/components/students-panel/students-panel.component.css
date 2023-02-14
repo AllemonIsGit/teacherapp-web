@@ -1,16 +1,7 @@
 .page {
-    display: flex;
-}
-
-.sideBar {
-    float: left;
-}
-
-.container {
-    margin: 0;
-    padding: 0;
-    border-top: 3px solid;
-    border-bottom: 3px solid;
-    border-right: 3px solid;
-    width: 200vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
 }
