@@ -1,0 +1,27 @@
+.loginForm {
+    align-self: center;
+    text-align:center;
+    margin: auto;
+    width: 25rem;
+    border: solid;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+
+.formField {
+    width: 20rem;
+    padding-bottom: 2rem;
+   
+}
+
+.loginText {
+    padding-bottom: 1rem;
+    font-size: 3rem;
+}
+
+
+.loginButton:enabled {
+    background-color: white !important;
+}

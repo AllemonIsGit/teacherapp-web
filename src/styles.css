@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background-color: #272727;
+    }
+
+.links:hover {
+    color: lightblue;
+    cursor: pointer;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+html {
+    min-height: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

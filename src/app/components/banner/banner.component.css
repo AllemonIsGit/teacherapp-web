@@ -1,0 +1,10 @@
+.line {
+    border: solid
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bolder;
+    align-self: center;
+    text-align:center;
+}
