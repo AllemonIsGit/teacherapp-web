@@ -4,24 +4,53 @@
     margin: auto;
     width: 25rem;
     border: solid;
+    border-radius: 10%;
     padding-top: 1rem;
     padding-bottom: 3rem;
     margin-top: 3rem;
 }
 
 
-.formField {
+/* .formField {
     width: 20rem;
     padding-bottom: 2rem;
    
-}
+} */
 
 .loginText {
-    padding-bottom: 1rem;
+    margin-top: 0rem;    
     font-size: 3rem;
 }
 
 
 .loginButton:enabled {
     background-color: white !important;
+}
+
+.myInput {
+    width: 18rem;
+    height: 2rem;
+    background-color: gray;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    border-radius: 25%;
+}
+
+.myInput::placeholder {
+    color: black;
+    font-weight: bolder; 
+    text-align: center;  
+}
+
+.myInput:focus {
+    outline: none;
+}
+
+.inputHolder {
+    padding-bottom: 2rem;
+}
+
+.myInputInvalid {
+    background-color: pink !important;
 }

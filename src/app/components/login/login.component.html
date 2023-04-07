@@ -7,23 +7,23 @@
             <h1 class="loginText">Login</h1>
         </div>
 
-        <div>
-            <mat-form-field class="formField">
-                <input type="text" matInput placeholder="Username" formControlName="username">
+        <div class="inputHolder">
+            <!-- <mat-form-field class="formField"> -->
+                <input id="inputUsername" class="myInput" type="text" placeholder="Username" formControlName="username" (change)="onInputChange()" [(ngModel)]="username">
 
                 <!-- <mat-error *ngIf="username!.invalid && username!.dirty"> Username has to be 3 to 20 characters long </mat-error> -->
 
-            </mat-form-field>
+            <!-- </mat-form-field> -->
         </div>
 
-        <div>
-            <mat-form-field class="formField">
+        <div class="inputHolder">
+            <!-- <mat-form-field class="formField"> -->
 
-                <input type="password" matInput placeholder="Password" formControlName="password">
+                <input id="inputPassword" class="myInput" type="password" placeholder="Password" formControlName="password">
 
                 <!-- <mat-error *ngIf="password!.invalid && password!.dirty"> Passwords has to be 5 to 20 characters long </mat-error> -->
 
-            </mat-form-field>
+            <!-- </mat-form-field> -->
         </div>
         <div>
             <p class="links" (click)="onRegisterClick()">Register</p>

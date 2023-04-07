@@ -1,1 +1,60 @@
-<p>register works!</p>
+<app-banner></app-banner>
+
+<form [formGroup]="registerForm">
+    <div class="registerForm">
+
+        <div>
+            <h1>Register</h1>
+        </div>
+
+        <div>
+            <mat-form-field class="formField">
+                <input matInput placeholder="Username" formControlName="username">
+
+                <!-- <mat-error *ngIf="username!.invalid && username!.dirty"> Username has to be 3 to 20 characters long </mat-error> -->
+                <mat-hint align="start"> This is you login name</mat-hint>
+
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="formField">
+                <input matInput placeholder="Nickname" formControlName="nickname">
+
+                <!-- <mat-error *ngIf="nickname!.invalid && nickname!.dirty"> Nickname has to be 3 to 20 characters long </mat-error> -->
+                <mat-hint align="start"> This is how we will adress you </mat-hint>
+
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="formField">
+
+                <input type="password" matInput placeholder="Password" formControlName="password">
+
+                <!-- <mat-error *ngIf="password!.invalid && password!.dirty"> Passwords has to be 5 to 20 characters long </mat-error> -->
+
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="formField">
+
+                <input type="password" matInput placeholder="Repassword" formControlName="rePassword">
+
+                <!-- <mat-error *ngIf="rePassword!.invalid && rePassword!.dirty"> That does't look right </mat-error> -->
+            
+
+            </mat-form-field>
+        </div>
+
+        <div>
+            <p class="links" (click)="onBackToLoginClick()">Back to login</p>
+        </div>
+
+        <div>
+            <button mat-raised-button color="blue" [disabled]="registerForm.invalid" (click)="onSubmit()"> register </button>
+        </div>
+
+    </div>
+</form>

@@ -1,0 +1,21 @@
+.registerForm {
+    align-self: center;
+    text-align:center;
+    margin: auto;
+    width: 25rem;
+    border: solid;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+.mat-form-field {
+    width: 15rem;
+
+}
+
+.formField {
+    width: 20rem;
+    padding-bottom: 2rem;
+   
+}
