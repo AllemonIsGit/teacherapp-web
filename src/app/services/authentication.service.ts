@@ -15,7 +15,6 @@ export class AuthenticationService {
 
 
   public registerUser(registerDto: RegisterDto): Observable<any> {
-    console.log(`Sending ${registerDto}`)
     return this.httpClient.post(`${AuthenticationService.DEFAULT_URL}/register`, registerDto, { responseType: 'text' })
   }
 

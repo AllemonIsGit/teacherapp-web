@@ -16,6 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RegisterComponent } from './components/register/register.component';
 import { HTMLService } from './services/html.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -42,6 +43,10 @@ import { HTMLService } from './services/html.service';
     provide: Renderer2,
     useFactory: (rendererFactory: RendererFactory2) => rendererFactory.createRenderer(null, null),
     deps: [RendererFactory2]
+  },
+  LoginComponent, {
+    provide: JwtHelperService,
+    useFactory: (jwtHelperService: JwtHelperService) => new JwtHelperService()
   }],
   bootstrap: [AppComponent]
 })

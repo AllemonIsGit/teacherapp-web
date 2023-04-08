@@ -1,9 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { HTMLService } from './../../services/html.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -16,12 +17,14 @@ export class LoginComponent implements OnInit {
   tokenService = new JwtHelperService()
   usernameInvalid: boolean = false
   passwordInvalid: boolean = false
+  serverResponse: string
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private dialog: MatDialog,
-    private htmlService: HTMLService
+    private htmlService: HTMLService,
+    private tokenHelper: JwtHelperService,
+    private authService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
@@ -38,11 +41,11 @@ export class LoginComponent implements OnInit {
       ]]
     })
 
-    // if (this.tokenService.isTokenExpired(localStorage.getItem('accessToken'))) {
-    //   return
-    // } else {
-    //   this.router.navigate(['/app'])
-    // }
+    if (this.tokenHelper.isTokenExpired(localStorage.getItem('accessToken'))) {
+      return
+    } else {
+      this.router.navigate(['/app'])
+    }
   }
 
   onRegisterClick() {
@@ -50,7 +53,14 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginClick() {
-    console.log(this.loginForm.getRawValue().username)
+    this.authService.login(this.loginForm.value).subscribe(
+      (response: any) => {
+        this.serverResponse = response
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error.error)
+      }
+    )
   }
 
   onUsernameFieldChange() {

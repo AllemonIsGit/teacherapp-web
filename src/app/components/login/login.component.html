@@ -7,6 +7,10 @@
             <h1 class="loginText alkatra">Login</h1>
         </div>
 
+        <p class="serverResponse" *ngIf="serverResponse != undefined">
+            {{serverResponse}}
+        </p>
+
         <div class="inputHolder">
 
             <input id="inputUsername" class="myInput" type="text" placeholder="Username" formControlName="username"

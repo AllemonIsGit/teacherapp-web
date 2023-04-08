@@ -58,3 +58,7 @@
     background-color: rgb(129, 129, 129) !important;
     transition: 0.25s ease-out;
 }
+
+.serverResponse {
+    font-weight: bolder;
+}

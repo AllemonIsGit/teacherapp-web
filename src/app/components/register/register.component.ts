@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RegisterDto } from 'src/app/dto/registerDto';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { HTMLService } from 'src/app/services/html.service';
 
@@ -18,6 +20,7 @@ export class RegisterComponent implements OnInit {
   rePasswordInvalid: boolean = false
   passwordsMatch: boolean = true
   registerButtonDisabled = true
+  serverResponse: any
 
   constructor(
     private formBuilder: FormBuilder,
@@ -58,8 +61,16 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm.get('username')?.value == this.registerForm.get('nickname')?.value)
-    console.log(this.registerForm.get('password')?.touched)
+    this.authService.registerUser(this.registerForm.value).subscribe(
+      (response: any) => {
+        this.serverResponse = response
+      },
+      (error: HttpErrorResponse) => {
+        this.serverResponse = error.error
+        var parsed: any = JSON.parse(error.error)
+        this.serverResponse = parsed.message
+      }
+    )
   }
 
   onUsernameFieldChange() {

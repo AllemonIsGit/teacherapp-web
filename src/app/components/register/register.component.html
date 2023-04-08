@@ -7,6 +7,10 @@
             <h1 class="registerText alkatra">Register</h1>
         </div>
 
+        <div>
+            <p class="serverResponse" *ngIf="serverResponse != undefined">{{serverResponse}}</p>
+        </div>
+
         <div class="inputHolder">
             <input id="inputUsername" class="myInput" placeholder="Username" formControlName="username" type="text"
                 (change)="onUsernameFieldChange()">
