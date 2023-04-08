@@ -54,11 +54,11 @@ export class LoginComponent implements OnInit {
   }
 
   onUsernameFieldChange() {
-    this.usernameInvalid = this.htmlService.validateInput(this.loginForm.get('username')?.valid ?? true, '#inputUsername')
+    this.usernameInvalid = this.htmlService.validateInputAndToggle(this.loginForm.get('username')?.valid ?? true, '#inputUsername')
   }
 
   onPasswordFieldChange() {
-    this.passwordInvalid = this.htmlService.validateInput(this.loginForm.get('password')?.valid ?? true, '#inputPassword')
+    this.passwordInvalid = this.htmlService.validateInputAndToggle(this.loginForm.get('password')?.valid ?? true, '#inputPassword')
   }
 
 

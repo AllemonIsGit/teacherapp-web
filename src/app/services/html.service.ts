@@ -9,7 +9,7 @@ export class HTMLService {
     private renderer: Renderer2
   ) { }
 
-  validateInput(valid: boolean, elementSelector: String): boolean {
+  validateInputAndToggle(valid: boolean, elementSelector: String): boolean {
     if (!valid) {
       var inputElement = this.renderer.selectRootElement(elementSelector)
       this.renderer.addClass(inputElement, 'myInputInvalid')
@@ -18,7 +18,5 @@ export class HTMLService {
     var inputElement = this.renderer.selectRootElement(elementSelector)
     this.renderer.removeClass(inputElement, 'myInputInvalid')
     return false
-
-
   }
 }

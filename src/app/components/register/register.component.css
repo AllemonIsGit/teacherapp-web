@@ -3,19 +3,58 @@
     text-align:center;
     margin: auto;
     width: 25rem;
-    border: solid;
+    border: solid 5px;
+    border-radius: 10%;
     padding-top: 1rem;
     padding-bottom: 3rem;
     margin-top: 3rem;
 }
 
-.mat-form-field {
-    width: 15rem;
-
+.registerText {
+    margin-top: 0rem;    
+    font-size: 3rem;
 }
 
-.formField {
-    width: 20rem;
+.myInput {
+    width: 18rem;
+    height: 2rem;
+    background-color: gray;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    border-radius: 10%;
+
+    transition: background-color 0.40s ease-out;
+}
+
+.myInput::placeholder {
+    color: black;
+    font-weight: bolder; 
+    text-align: center;  
+}
+
+.myInput:focus {
+    outline: none;
+}
+
+.inputHolder {
     padding-bottom: 2rem;
-   
+}
+
+.myInputInvalid {
+    background-color: pink !important;
+}
+
+.invalidHint {
+    color: red;
+}
+
+.registerButton:enabled {
+    background-color: white !important;
+    transition: 0.25s ease-out;
+}
+
+.registerButton:enabled:hover {
+    background-color: rgb(129, 129, 129) !important;
+    transition: 0.25s ease-out;
 }

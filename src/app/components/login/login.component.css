@@ -10,13 +10,6 @@
     margin-top: 3rem;
 }
 
-
-/* .formField {
-    width: 20rem;
-    padding-bottom: 2rem;
-   
-} */
-
 .loginText {
     margin-top: 0rem;    
     font-size: 3rem;
@@ -25,6 +18,12 @@
 
 .loginButton:enabled {
     background-color: white !important;
+    transition: 0.25s ease-out;
+}
+
+.loginButton:enabled:hover {
+    background-color: rgb(129, 129, 129) !important;
+    transition: 0.25s ease-out;
 }
 
 .myInput {

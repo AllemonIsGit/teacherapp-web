@@ -5,9 +5,14 @@ body {
     background-color: #272727;
     }
 
+.links {
+    transition: 0.50s ease-out;
+}
+
 .links:hover {
     color: lightblue;
     cursor: pointer;
+    transition: 0.50s ease-out;
 }
 
 .clickable:hover {

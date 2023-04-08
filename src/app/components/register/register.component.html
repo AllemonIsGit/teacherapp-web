@@ -4,33 +4,43 @@
     <div class="registerForm">
 
         <div>
-            <h1>Register</h1>
+            <h1 class="registerText alkatra">Register</h1>
+        </div>
+
+        <div class="inputHolder">
+            <input id="inputUsername" class="myInput" placeholder="Username" formControlName="username" type="text"
+                (change)="onUsernameFieldChange()">
+            <p class="invalidHint" *ngIf="usernameInvalid"> Username has to be 3 to 20 characters long.</p>
+        </div>
+
+        <div class="inputHolder">
+            <input id="inputNickname" class="myInput" placeholder="Nickname" formControlName="nickname"
+                (change)="onNicknameFieldChange()">
+            <p class="invalidHint" *ngIf="nicknameInvalid"> Nickname has to be 3 to 20 characters long.</p>
+        </div>
+
+        <div class="inputHolder">
+            <input id="inputPassword" class="myInput" type="password" placeholder="Password" formControlName="password"
+                (change)="onPasswordFieldChange()">
+            <p class="invalidHint" *ngIf="passwordInvalid"> Password has to be 5 to 20 characters long.</p>
+        </div>
+
+        <div class="inputHolder">
+            <input id="inputRepassword" class="myInput" type="password" placeholder="Repassword"
+                formControlName="rePassword" (change)="onRePasswordFieldChange()">
+            <p class="invalidHint" *ngIf="rePasswordInvalid"> Password has to be 5 to 20 characters long.</p>
+            <p class="invalidHint"
+                *ngIf="!passwordsMatch && (registerForm.get('password')?.touched && registerForm.get('rePassword')?.touched)">
+                Passwords don't match.</p>
         </div>
 
         <div>
-            <input matInput placeholder="Username" formControlName="username">
+            <p class="links alkatra" (click)="onBackToLoginClick()">Back to login</p>
         </div>
 
         <div>
-            <input matInput placeholder="Nickname" formControlName="nickname">
-        </div>
-
-        <div>
-            <input type="password" matInput placeholder="Password" formControlName="password">
-        </div>
-
-        <div>
-
-            <input type="password" matInput placeholder="Repassword" formControlName="rePassword">
-
-        </div>
-
-        <div>
-            <p class="links" (click)="onBackToLoginClick()">Back to login</p>
-        </div>
-
-        <div>
-            <button mat-raised-button color="blue" [disabled]="registerForm.invalid" (click)="onSubmit()"> register
+            <button class="registerButton alkatra" mat-raised-button color="blue" [disabled]="registerForm.invalid"
+                (click)="onSubmit()"> Register
             </button>
         </div>
 
