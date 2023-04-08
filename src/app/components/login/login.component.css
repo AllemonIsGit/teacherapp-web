@@ -3,7 +3,7 @@
     text-align:center;
     margin: auto;
     width: 25rem;
-    border: solid;
+    border: solid 5px;
     border-radius: 10%;
     padding-top: 1rem;
     padding-bottom: 3rem;
@@ -34,7 +34,9 @@
     padding-left: 1rem;
     padding-right: 1rem;
     text-align: center;
-    border-radius: 25%;
+    border-radius: 10%;
+
+    transition: background-color 0.40s ease-out;
 }
 
 .myInput::placeholder {
@@ -53,4 +55,8 @@
 
 .myInputInvalid {
     background-color: pink !important;
+}
+
+.invalidHint {
+    color: red;
 }

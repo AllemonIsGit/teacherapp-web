@@ -1,4 +1,5 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { HTMLService } from './../../services/html.service';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -13,13 +14,14 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup
   tokenService = new JwtHelperService()
-  username: string
+  usernameInvalid: boolean = false
+  passwordInvalid: boolean = false
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private dialog: MatDialog,
-    private renderer: Renderer2
+    private htmlService: HTMLService
   ) { }
 
   ngOnInit(): void {
@@ -51,23 +53,14 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.getRawValue().username)
   }
 
-  changeColor() {
-    var input = this.renderer.selectRootElement(`#inputUsername`)
-    this.renderer.addClass(input, `myInputInvalid`)
-    input = this.renderer.selectRootElement(`#inputPassword`)
-    this.renderer.addClass(input, `myInputInvalid`)
+  onUsernameFieldChange() {
+    this.usernameInvalid = this.htmlService.validateInput(this.loginForm.get('username')?.valid ?? true, '#inputUsername')
   }
 
-  onInputChange() {
-    if (!this.loginForm.get('username')?.valid) {
-      this.changeColor()
-    } else {
-      const input = this.renderer.selectRootElement(`#inputUsername`)
-      this.renderer.removeClass(input, "myInputInvalid")
-    }
-
+  onPasswordFieldChange() {
+    this.passwordInvalid = this.htmlService.validateInput(this.loginForm.get('password')?.valid ?? true, '#inputPassword')
   }
 
-  
+
 
 }

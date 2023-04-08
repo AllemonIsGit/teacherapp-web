@@ -8,44 +8,21 @@
         </div>
 
         <div>
-            <mat-form-field class="formField">
-                <input matInput placeholder="Username" formControlName="username">
-
-                <!-- <mat-error *ngIf="username!.invalid && username!.dirty"> Username has to be 3 to 20 characters long </mat-error> -->
-                <mat-hint align="start"> This is you login name</mat-hint>
-
-            </mat-form-field>
+            <input matInput placeholder="Username" formControlName="username">
         </div>
 
         <div>
-            <mat-form-field class="formField">
-                <input matInput placeholder="Nickname" formControlName="nickname">
-
-                <!-- <mat-error *ngIf="nickname!.invalid && nickname!.dirty"> Nickname has to be 3 to 20 characters long </mat-error> -->
-                <mat-hint align="start"> This is how we will adress you </mat-hint>
-
-            </mat-form-field>
+            <input matInput placeholder="Nickname" formControlName="nickname">
         </div>
 
         <div>
-            <mat-form-field class="formField">
-
-                <input type="password" matInput placeholder="Password" formControlName="password">
-
-                <!-- <mat-error *ngIf="password!.invalid && password!.dirty"> Passwords has to be 5 to 20 characters long </mat-error> -->
-
-            </mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password">
         </div>
 
         <div>
-            <mat-form-field class="formField">
 
-                <input type="password" matInput placeholder="Repassword" formControlName="rePassword">
+            <input type="password" matInput placeholder="Repassword" formControlName="rePassword">
 
-                <!-- <mat-error *ngIf="rePassword!.invalid && rePassword!.dirty"> That does't look right </mat-error> -->
-            
-
-            </mat-form-field>
         </div>
 
         <div>
@@ -53,7 +30,8 @@
         </div>
 
         <div>
-            <button mat-raised-button color="blue" [disabled]="registerForm.invalid" (click)="onSubmit()"> register </button>
+            <button mat-raised-button color="blue" [disabled]="registerForm.invalid" (click)="onSubmit()"> register
+            </button>
         </div>
 
     </div>

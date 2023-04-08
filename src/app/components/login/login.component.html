@@ -4,33 +4,32 @@
     <div class="loginForm">
 
         <div>
-            <h1 class="loginText">Login</h1>
+            <h1 class="loginText alkatra">Login</h1>
         </div>
 
         <div class="inputHolder">
-            <!-- <mat-form-field class="formField"> -->
-                <input id="inputUsername" class="myInput" type="text" placeholder="Username" formControlName="username" (change)="onInputChange()" [(ngModel)]="username">
 
-                <!-- <mat-error *ngIf="username!.invalid && username!.dirty"> Username has to be 3 to 20 characters long </mat-error> -->
+            <input id="inputUsername" class="myInput" type="text" placeholder="Username" formControlName="username"
+                (change)="onUsernameFieldChange()">
+            <p class="invalidHint" *ngIf="usernameInvalid">Username has to be 3 to 20 characters long.</p>
 
-            <!-- </mat-form-field> -->
         </div>
 
         <div class="inputHolder">
-            <!-- <mat-form-field class="formField"> -->
 
-                <input id="inputPassword" class="myInput" type="password" placeholder="Password" formControlName="password">
+            <input id="inputPassword" class="myInput" type="password" placeholder="Password" formControlName="password"
+                (change)="onPasswordFieldChange()">
+            <p class="invalidHint" *ngIf="passwordInvalid">Password has to be 5 to 20 characters long.</p>
 
-                <!-- <mat-error *ngIf="password!.invalid && password!.dirty"> Passwords has to be 5 to 20 characters long </mat-error> -->
 
-            <!-- </mat-form-field> -->
         </div>
         <div>
-            <p class="links" (click)="onRegisterClick()">Register</p>
+            <p class="links alkatra" (click)="onRegisterClick()">Register</p>
         </div>
 
         <div>
-            <button class="loginButton" mat-raised-button color="red" [disabled]="loginForm.invalid" (click)="onLoginClick()"> Login </button>
+            <button class="loginButton alkatra" mat-raised-button color="red" [disabled]="loginForm.invalid"
+                (click)="onLoginClick()"> Login </button>
         </div>
 
     </div>

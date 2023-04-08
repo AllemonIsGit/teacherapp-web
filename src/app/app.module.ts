@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Renderer2, RendererFactory2 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RegisterComponent } from './components/register/register.component';
+import { HTMLService } from './services/html.service';
 
 
 @NgModule({
@@ -37,7 +38,11 @@ import { RegisterComponent } from './components/register/register.component';
     MatSelectModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [HTMLService, {
+    provide: Renderer2,
+    useFactory: (rendererFactory: RendererFactory2) => rendererFactory.createRenderer(null, null),
+    deps: [RendererFactory2]
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
