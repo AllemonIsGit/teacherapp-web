@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
   passwordInvalid: boolean = false
   rePasswordInvalid: boolean = false
   passwordsMatch: boolean = true
+  registerButtonDisabled = true
 
   constructor(
     private formBuilder: FormBuilder,
@@ -82,12 +83,10 @@ export class RegisterComponent implements OnInit {
   passwordMatchCheck() {
     if (this.registerForm.get('password')?.value == this.registerForm.get('rePassword')?.value) {
       this.passwordsMatch = true
+      this.registerButtonDisabled = false
     } else {
       this.passwordsMatch = false
+      this.registerButtonDisabled = true
     }
   }
-
-
-
-
 }

@@ -39,7 +39,7 @@
         </div>
 
         <div>
-            <button class="registerButton alkatra" mat-raised-button color="blue" [disabled]="registerForm.invalid"
+            <button class="registerButton alkatra" mat-raised-button color="blue" [disabled]="registerForm.invalid || registerButtonDisabled"
                 (click)="onSubmit()"> Register
             </button>
         </div>
