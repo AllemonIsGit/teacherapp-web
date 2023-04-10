@@ -1,4 +1,4 @@
-export class LoginResponse {
+export interface LoginResponse {
     token: string
-    constructor(token: string) { }
+    message: string
 }

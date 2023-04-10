@@ -55,7 +55,11 @@ export class LoginComponent implements OnInit {
   onLoginClick() {
     this.authService.login(this.loginForm.value).subscribe(
       (response: any) => {
-        this.serverResponse = response
+        if (response.token) {
+          console.log(response.token)
+          return
+        }
+        this.serverResponse = response 
       },
       (error: HttpErrorResponse) => {
         console.log(error.error)

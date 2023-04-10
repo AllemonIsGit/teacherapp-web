@@ -17,6 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RegisterComponent } from './components/register/register.component';
 import { HTMLService } from './services/html.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { StudentsComponent } from './components/students/students.component';
+import { SideBarComponent } from './components/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
     AppComponent,
     BannerComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    StudentsComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,

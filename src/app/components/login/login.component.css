@@ -61,5 +61,6 @@
 }
 
 .serverResponse {
-    font-weight: bolder;
+    font-weight: 400;
+    color: red;
 }
