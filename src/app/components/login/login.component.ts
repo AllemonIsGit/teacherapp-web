@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe(
       (response: any) => {
         if (response.token) {
-          localStorage.setItem('token', response.token)
+          localStorage.setItem('accessToken', response.token)
           return
         }
         this.serverResponse = response 
