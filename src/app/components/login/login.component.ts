@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     if (this.tokenHelper.isTokenExpired(localStorage.getItem('accessToken'))) {
       return
     } else {
-      this.router.navigate(['/app'])
+      this.router.navigate(['/students'])
     }
   }
 
@@ -57,9 +57,11 @@ export class LoginComponent implements OnInit {
       (response: any) => {
         if (response.token) {
           localStorage.setItem('accessToken', response.token)
+          this.router.navigate(['/students'])
+
           return
         }
-        this.serverResponse = response 
+        this.serverResponse = response
       },
       (error: HttpErrorResponse) => {
         console.log(error.error)
@@ -74,7 +76,4 @@ export class LoginComponent implements OnInit {
   onPasswordFieldChange() {
     this.passwordInvalid = this.htmlService.validateInputAndToggle(this.loginForm.get('password')?.valid ?? true, '#inputPassword')
   }
-
-
-
 }

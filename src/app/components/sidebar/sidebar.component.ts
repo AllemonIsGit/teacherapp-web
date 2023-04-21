@@ -11,6 +11,7 @@ export class SideBarComponent {
   constructor(private router: Router) { }
 
   onClick() {
+    localStorage.removeItem('accessToken')
     this.router.navigate([``])
   }
 }

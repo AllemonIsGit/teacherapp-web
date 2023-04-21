@@ -1,0 +1,43 @@
+.page {
+    /* height: 57.5rem;
+    width: 119.3rem; */
+    /* border: solid 0.2rem; */
+    display: flex;
+    /* border: solid 5px black; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* .container {
+    height: 50rem;
+    width: 15rem;
+    display: flex;
+} */
+
+.topbar {
+    width: 105rem;
+    height: 2.5rem;
+    border: solid 0.5rem;
+    position: relative;
+}
+
+.button {
+    background-color: #a0a0a0;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.25s ease-out;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #cfcfcf;
+}

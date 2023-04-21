@@ -19,6 +19,7 @@ import { HTMLService } from './services/html.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { StudentsComponent } from './components/students/students.component';
 import { SideBarComponent } from './components/sidebar/sidebar.component';
+import { StudentFormComponent } from './components/student-form/student-form.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SideBarComponent } from './components/sidebar/sidebar.component';
     LoginComponent,
     RegisterComponent,
     StudentsComponent,
-    SideBarComponent
+    SideBarComponent,
+    StudentFormComponent
   ],
   imports: [
     BrowserModule,

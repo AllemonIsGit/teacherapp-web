@@ -1,0 +1,62 @@
+.studentForm {
+    text-align: center;
+}
+
+.myInput {
+    width: 18rem;
+    height: 2rem;
+    background-color: gray;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    border-radius: 10%;
+
+    transition: background-color 0.40s ease-out;
+}
+
+.myInput::placeholder {
+    color: black;
+    font-weight: bolder; 
+    text-align: center;  
+}
+
+.myInput:focus {
+    outline: none;
+}
+
+.inputHolder {
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.createButton {
+    background-color: #272727;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.25s ease-out;
+    margin-bottom: 1rem;
+    border: solid red 1px;
+}
+
+.createButton:enabled:hover {
+    cursor: pointer;
+    background-color: #c2c2c2;
+    border: solid red 0px;
+}
+
+.createButton:enabled {
+    background-color: #8b8b8b;
+    border: solid red 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

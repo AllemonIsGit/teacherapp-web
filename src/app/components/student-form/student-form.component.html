@@ -1,0 +1,17 @@
+<form class="studentForm" [formGroup]="studentForm">
+    <h1 class="alkatra text">New Student</h1>
+
+    <div class="inputHolder">
+
+        <input class="myInput" type="text" placeholder="Name" formControlName="name">
+
+    </div>
+    <div class="inputHolder">
+
+        <input class="myInput" type="number" placeholder="Session Cost" formControlName="payPerSession">
+
+    </div>
+
+    <button class="createButton" [disabled]="studentForm.invalid">Create</button>
+
+</form>
