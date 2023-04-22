@@ -8,8 +8,7 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class AuthenticationService {
-
-  private static DEFAULT_URL: string = "http://localhost:8080/api/v1/authentication"
+  private static readonly DEFAULT_URL: string = "http://localhost:8080/api/v1/authentication"
 
   constructor(private httpClient: HttpClient) { }
 
