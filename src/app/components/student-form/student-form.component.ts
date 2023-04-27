@@ -1,6 +1,7 @@
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { StudentService } from 'src/app/services/student.service';
 
 @Component({
@@ -11,11 +12,13 @@ import { StudentService } from 'src/app/services/student.service';
 export class StudentFormComponent implements OnInit {
 
   studentForm: FormGroup
+  serverResponse: string
 
 
   constructor(
     private formBuilder: FormBuilder,
-    private studentService: StudentService
+    private studentService: StudentService,
+    private dialog: MatDialog
   ) {
 
   }
@@ -32,10 +35,13 @@ export class StudentFormComponent implements OnInit {
   onCreate() {
     this.studentService.postStudent(this.studentForm.value).subscribe(
       (response: any) => {
-        alert(response.message)
+        this.serverResponse = response.message
+        setTimeout(() => {
+          this.dialog.closeAll()
+        }, 1000)
       },
       (error: HttpErrorResponse) => {
-        alert('error')
+        this.serverResponse = error.error
       }
       
     )

@@ -26,6 +26,11 @@ export class StudentsComponent implements OnInit {
 
   onNewStudent() {
     this.dialog.open(StudentFormComponent)
+    this.dialog.afterAllClosed.subscribe(
+      result => {
+        this.getStudents()
+      }
+    )
   }
 
   getStudents() {

@@ -1,5 +1,6 @@
 <form class="studentForm" [formGroup]="studentForm">
     <h1 class="alkatra text">New Student</h1>
+    <p class="serverResponse" *ngIf="serverResponse != undefined">{{serverResponse}}</p>
 
     <div class="inputHolder">
 
