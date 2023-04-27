@@ -4,10 +4,15 @@
 
     </app-sidebar>
 
-    <div class="topbar">
-        <button class="button" (click)="onNewStudent()">
-            New student
-        </button>
+    <div class="mainContainer">
+        <div class="topbar">
+            <button class="button" (click)="onNewStudent()">
+                New student
+            </button>
+        </div>
 
+        <app-student-element class="element" *ngFor="let student of students" [student]="student" (deleteEvent)="onChildDeleteEvent()">
+
+        </app-student-element>
     </div>
 </div>

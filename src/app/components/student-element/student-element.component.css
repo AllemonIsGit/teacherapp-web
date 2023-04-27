@@ -1,0 +1,19 @@
+.container {
+    border-bottom: solid black 0.25rem;
+    width: 104rem;
+    height: 5rem;
+    display: block;
+}
+
+.icon {
+    background: url('src\assets\xmark-solid.svg');
+    background-size: 2rem;
+    height: 3rem;
+    width: 2rem;
+    display: block;
+    /* Other styles here */
+}
+
+.icon:hover {
+    cursor: pointer;
+}

@@ -1,5 +1,7 @@
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-student-form',
@@ -12,7 +14,8 @@ export class StudentFormComponent implements OnInit {
 
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private studentService: StudentService
   ) {
 
   }
@@ -25,5 +28,19 @@ export class StudentFormComponent implements OnInit {
       payPerSession: ['', []]
     })
   }
+
+  onCreate() {
+    this.studentService.postStudent(this.studentForm.value).subscribe(
+      (response: any) => {
+        alert(response.message)
+      },
+      (error: HttpErrorResponse) => {
+        alert('error')
+      }
+      
+    )
+  }
+
+
 
 }

@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { StudentFormComponent } from '../student-form/student-form.component';
 import { StudentService } from 'src/app/services/student.service';
+import { Student } from 'src/app/model/student';
 
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.css']
 })
-export class StudentsComponent {
+export class StudentsComponent implements OnInit {
+  students: Student[] = new Array
 
   constructor(
     private router: Router,
@@ -18,11 +20,19 @@ export class StudentsComponent {
   ) {
 
   }
+  ngOnInit(): void {
+    this.getStudents()
+  }
 
   onNewStudent() {
     this.dialog.open(StudentFormComponent)
-    this.studentService.getStudents().subscribe((data) => {console.log(JSON.stringify(data))})
-
   }
 
+  getStudents() {
+    this.studentService.getStudents().subscribe((e) => this.students = e)
+  }
+
+  onChildDeleteEvent() {
+    this.getStudents()
+  }
 }

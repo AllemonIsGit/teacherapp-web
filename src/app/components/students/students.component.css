@@ -1,9 +1,5 @@
 .page {
-    /* height: 57.5rem;
-    width: 119.3rem; */
-    /* border: solid 0.2rem; */
     display: flex;
-    /* border: solid 5px black; */
     top: 0;
     left: 0;
     right: 0;
@@ -12,14 +8,13 @@
     overflow: hidden;
 }
 
-/* .container {
-    height: 50rem;
-    width: 15rem;
+.mainContainer {
     display: flex;
-} */
+    flex-direction: column;
+}
 
 .topbar {
-    width: 105rem;
+    width: 103rem;
     height: 2.5rem;
     border: solid 0.5rem;
     position: relative;

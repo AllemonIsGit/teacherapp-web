@@ -20,6 +20,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { StudentsComponent } from './components/students/students.component';
 import { SideBarComponent } from './components/sidebar/sidebar.component';
 import { StudentFormComponent } from './components/student-form/student-form.component';
+import { StudentElementComponent } from './components/student-element/student-element.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { StudentFormComponent } from './components/student-form/student-form.com
     RegisterComponent,
     StudentsComponent,
     SideBarComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    StudentElementComponent
   ],
   imports: [
     BrowserModule,
