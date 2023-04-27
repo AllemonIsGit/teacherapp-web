@@ -2,7 +2,7 @@
     border-bottom: solid black 0.25rem;
     width: 104rem;
     height: 5rem;
-    display: block;
+    display: flex;
 }
 
 .icon {
@@ -10,10 +10,19 @@
     background-size: 2rem;
     height: 3rem;
     width: 2rem;
-    display: block;
-    /* Other styles here */
 }
 
 .icon:hover {
     cursor: pointer;
+}
+
+.name {
+    margin-right: 2rem;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.price {
+    font-weight: bold;
+    font-size: larger;
 }

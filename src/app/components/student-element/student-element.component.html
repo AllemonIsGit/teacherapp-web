@@ -1,7 +1,10 @@
 <div class="container">
-    <h1>
-        {{this.student.name}}
-        <span class="icon" (click)="onDeleteClick()"></span>
-    </h1>
+    <p class="name">
+        Name: {{this.student.name}}
+    </p>
+    <p class="price">
+        Session cost: {{this.student.payPerSession}}
+    </p>
+    <span class="icon" (click)="onDeleteClick()"></span>
 
 </div>
