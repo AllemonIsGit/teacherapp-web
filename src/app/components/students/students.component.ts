@@ -25,10 +25,11 @@ export class StudentsComponent implements OnInit {
   }
 
   onNewStudent() {
-    this.dialog.open(StudentFormComponent)
-    this.dialog.afterAllClosed.subscribe(
+    var studentDialog = this.dialog.open(StudentFormComponent)
+    studentDialog.afterClosed().subscribe(
       result => {
         this.getStudents()
+        console.log('xd')
       }
     )
   }
