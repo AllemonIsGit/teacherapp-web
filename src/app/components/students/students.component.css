@@ -13,7 +13,6 @@
     flex-direction: column;
     border-bottom: solid black 0.5rem;
     height: 57.7rem;
-    overflow: auto;
 }
 ::-webkit-scrollbar {
     width: 0;
@@ -42,4 +41,8 @@
 .button:hover {
     cursor: pointer;
     background-color: #cfcfcf;
+}
+
+.studentWrapper {
+    overflow: auto;
 }

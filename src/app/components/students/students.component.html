@@ -10,9 +10,11 @@
                 New student
             </button>
         </div>
+        <div class="studentWrapper">
+            <app-student-element class="element" *ngFor="let student of students" [student]="student"
+                (deleteEvent)="onChildDeleteEvent()">
 
-        <app-student-element class="element" *ngFor="let student of students" [student]="student" (deleteEvent)="onChildDeleteEvent()">
-
-        </app-student-element>
+            </app-student-element>
+        </div>
     </div>
 </div>
